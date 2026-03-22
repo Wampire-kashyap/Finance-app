@@ -1,0 +1,141 @@
+/* ================================================================
+   FINANCEFLOW — PAGE-SPECIFIC STYLES
+   ================================================================ */
+
+/* ---------- DASHBOARD ---------- */
+.dashboard-charts { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 24px; }
+.dashboard-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.recent-activity-list { display: flex; flex-direction: column; gap: 8px; max-height: 340px; overflow-y: auto; }
+.activity-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+}
+.activity-item:hover { background: var(--surface-glass); }
+.activity-icon {
+    width: 32px; height: 32px;
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.activity-text { font-size: var(--font-sm); color: var(--text-secondary); line-height: 1.4; }
+.activity-text strong { color: var(--text-primary); font-weight: 600; }
+.activity-time { font-size: var(--font-xs); color: var(--text-muted); margin-top: 2px; }
+
+/* Delay analysis */
+.delay-list { display: flex; flex-direction: column; gap: 8px; }
+.delay-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--surface-glass);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-primary);
+}
+.delay-vendor { font-size: var(--font-sm); font-weight: 500; }
+.delay-bar-wrap { flex: 1; margin: 0 16px; height: 6px; background: var(--bg-tertiary); border-radius: 3px; overflow: hidden; }
+.delay-bar { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
+.delay-days { font-size: var(--font-sm); font-weight: 600; white-space: nowrap; }
+
+/* ---------- VENDOR DETAIL ---------- */
+.vendor-profile-header {
+    display: flex; align-items: center; gap: 20px;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    margin-bottom: 20px;
+}
+.vendor-avatar-lg {
+    width: 64px; height: 64px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-lg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: var(--font-xl); font-weight: 800; color: white;
+}
+.vendor-profile-info h2 { font-size: var(--font-xl); font-weight: 700; }
+.vendor-profile-info p { color: var(--text-secondary); font-size: var(--font-sm); }
+.vendor-stats { display: flex; gap: 24px; margin-left: auto; }
+.vendor-stat { text-align: center; }
+.vendor-stat-value { font-size: var(--font-lg); font-weight: 700; }
+.vendor-stat-label { font-size: var(--font-xs); color: var(--text-tertiary); }
+
+/* ---------- INVOICE DETAIL ---------- */
+.invoice-detail-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+
+/* ---------- CATEGORY BUDGET BAR ---------- */
+.budget-bar-wrap {
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+.budget-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+.budget-bar.under { background: var(--success); }
+.budget-bar.near { background: var(--warning); }
+.budget-bar.over { background: var(--danger); }
+.budget-info { display: flex; justify-content: space-between; font-size: var(--font-xs); color: var(--text-tertiary); margin-top: 4px; }
+
+/* ---------- REPORT PAGE ---------- */
+.report-summary-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+
+/* ---------- AUDIT LOG ---------- */
+.audit-list { display: flex; flex-direction: column; }
+.audit-item {
+    display: grid;
+    grid-template-columns: 140px 100px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-primary);
+    font-size: var(--font-sm);
+    transition: background var(--transition-fast);
+}
+.audit-item:hover { background: var(--bg-hover); }
+.audit-time { color: var(--text-muted); font-size: var(--font-xs); }
+.audit-user { color: var(--accent); font-weight: 500; }
+.audit-action { color: var(--text-secondary); }
+.audit-target { color: var(--text-tertiary); font-size: var(--font-xs); }
+
+/* ---------- USER MANAGEMENT ---------- */
+.user-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.user-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    text-align: center;
+    transition: all var(--transition-fast);
+}
+.user-card:hover { border-color: var(--border-secondary); transform: translateY(-2px); }
+.user-card-avatar {
+    width: 56px; height: 56px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-lg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: var(--font-xl); font-weight: 800; color: white;
+    margin: 0 auto 12px;
+}
+.user-card-name { font-weight: 600; font-size: var(--font-md); margin-bottom: 2px; }
+.user-card-role { font-size: var(--font-sm); color: var(--text-tertiary); }
+.user-card-email { font-size: var(--font-xs); color: var(--text-muted); margin-top: 4px; }
+.user-card-actions { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
+
+/* ---------- RESPONSIVE OVERRIDES ---------- */
+@media (max-width: 1024px) {
+    .dashboard-charts { grid-template-columns: 1fr; }
+    .dashboard-bottom { grid-template-columns: 1fr; }
+    .invoice-detail-layout { grid-template-columns: 1fr; }
+    .report-summary-cards { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+    .vendor-profile-header { flex-direction: column; text-align: center; }
+    .vendor-stats { margin-left: 0; }
+    .report-summary-cards { grid-template-columns: 1fr; }
+    .audit-item { grid-template-columns: 1fr; gap: 4px; }
+}
